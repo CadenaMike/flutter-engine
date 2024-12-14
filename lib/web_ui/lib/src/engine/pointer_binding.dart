@@ -235,6 +235,7 @@ class ClickDebouncer {
   ///
   /// In all other situations forwards the event to the framework.
   void onPointerData(DomEvent event, List<ui.PointerData> data) {
+    print('DOM event: ${event.type}');
     if (!EnginePlatformDispatcher.instance.semanticsEnabled) {
       _sendToFramework(event, data);
       return;
